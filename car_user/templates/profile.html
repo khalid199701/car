@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Your Purchased Cars</h2>
+  {% csrf_token %}
+  {% for car in purchased_cars %}
+    <div>
+      <h3>{{ car.name }}</h3>
+      <p>Description: {{ car.description }}</p>
+      <p>Price: ${{ car.price }}</p>
+    </div>
+  {% endfor %}
+{% endblock %}
